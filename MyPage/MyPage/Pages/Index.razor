@@ -1,0 +1,142 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Formulário de Cadastro!</h1>
+
+
+<Form>
+	<Divider DividerType="DividerType.TextContent" Text="Passo 1" />
+	<Card Shadow="Shadow.Default" Border="Border.Primary">
+		<CardHeader Background="Background.Primary" TextColor="TextColor.White"><Icon Name="@("fa-user-circle")" /> <Strong>Dados Básicos</Strong></CardHeader>
+		<CardBody>
+			<Field Horizontal="true">
+				<FieldLabel ColumnSize="ColumnSize.Is2">Nome</FieldLabel>
+				<FieldBody ColumnSize="ColumnSize.Is10">
+					<TextEdit Placeholder="Ex: Josiane da Silva" />
+				</FieldBody>
+			</Field>
+			<Field Horizontal="true">
+				<FieldLabel ColumnSize="ColumnSize.Is2">Tratamento</FieldLabel>
+				<FieldBody ColumnSize="ColumnSize.Is10">
+					<TextEdit Placeholder="Ex: Josi" />
+				</FieldBody>
+			</Field>
+			<Field Horizontal="true">
+				<FieldLabel ColumnSize="ColumnSize.Is2">Tipo de Pessoa</FieldLabel>
+				<FieldBody ColumnSize="ColumnSize.Is10">
+					<RadioGroup TValue="string" Name="TipoPessoa">
+						<Radio TValue="string" Value="@("fisica")">Física</Radio>
+						<Radio TValue="string" Value="@("juridica")">Júridica</Radio>
+					</RadioGroup>
+				</FieldBody>
+			</Field>
+			<Field Horizontal="true">
+				<FieldLabel ColumnSize="ColumnSize.Is2">Data de Nascimento</FieldLabel>
+				<FieldBody ColumnSize="ColumnSize.Is10">
+					<DateEdit TValue="DateTime?" />
+				</FieldBody>
+			</Field>
+			<Field Horizontal="true">
+				<FieldLabel ColumnSize="ColumnSize.Is2">Definir contato como</FieldLabel>
+				<FieldBody ColumnSize="ColumnSize.Is10">
+					<Switch TValue="bool">Siginatário</Switch>
+					<Switch TValue="bool">Representante Legal</Switch>
+				</FieldBody>
+			</Field>
+		</CardBody>
+	</Card>
+
+	<br />
+
+	<Card Shadow="Shadow.Default" Border="Border.Primary">
+		<CardBody>
+			<Field Horizontal="true">
+				<Column>
+					<FieldLabel>CPF</FieldLabel>
+					<FieldBody>
+						<TextEdit Placeholder="000.000.000-00" />
+					</FieldBody>
+				</Column>
+				<Column>
+					<FieldLabel>CNPJ</FieldLabel>
+					<FieldBody>
+						<TextEdit Placeholder="000.000.000-00" />
+					</FieldBody>
+				</Column>
+			</Field>
+		</CardBody>
+	</Card>
+
+	<Divider DividerType="DividerType.TextContent" Text="Passo 2" />
+
+	<Card Shadow="Shadow.Default" Border="Border.Primary">
+		<CardHeader Background="Background.Primary" TextColor="TextColor.White"><Icon Name="@("fa-building")" /> <Strong>Logradouro</Strong></CardHeader>
+		<CardBody>
+			<Field Horizontal="true">
+				<Column>
+					<FieldLabel>Endereço</FieldLabel>
+					<FieldBody>
+						<TextEdit />
+					</FieldBody>
+				</Column>
+				<Column>
+					<FieldLabel>Complemento</FieldLabel>
+					<FieldBody>
+						<TextEdit />
+					</FieldBody>
+				</Column>
+				<Column ColumnSize="ColumnSize.Is1">
+					<FieldLabel>Nº</FieldLabel>
+					<FieldBody>
+						<TextEdit />
+					</FieldBody>
+				</Column>
+			</Field>
+			<Row>
+				<Column>
+					<Field>
+						<FieldLabel>Bairro</FieldLabel>
+						<FieldBody>
+							<TextEdit />
+						</FieldBody>
+					</Field>
+				</Column>
+				<Column>
+					<Field>
+						<FieldLabel>CEP</FieldLabel>
+						<FieldBody>
+							<TextEdit />
+						</FieldBody>
+					</Field>
+				</Column>
+				<Column>
+					<Field>
+						<FieldLabel>Cidade</FieldLabel>
+						<FieldBody>
+							<TextEdit />
+						</FieldBody>
+					</Field>
+				</Column>
+				<Column>
+					<Field>
+						<FieldLabel>Estado</FieldLabel>
+						<FieldBody>
+							<TextEdit />
+						</FieldBody>
+					</Field>
+				</Column>
+			</Row>
+
+		</CardBody>
+	</Card>
+	<br />
+
+
+	<Button Color="Color.Success" Outline Block="true" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Shadow="Shadow.Small" Border="Border.RoundedPill">
+		<Icon Name="@("fa-check")" />
+		Concluir
+	</Button>
+
+</Form>
+<SurveyPrompt Title="How is Blazor working for you?" />
